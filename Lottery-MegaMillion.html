@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Random Lotto Number Generator</title>
+
+
+<script type='text/javascript'>
+
+  var megamillionLotteryRandom;
+
+var megamillionRandom;
+
+function genRanMegamillionNum(min, max, num) {
+
+  var megamillionArray = [];
+
+  for (var i = 0; i < num; i++) {
+
+    var ranNum = Math.random() * (max - min) + min;
+
+    while (megamillionArray.indexOf(Math.round(ranNum)) > -1) {
+      ranNum = Math.random() * (max - min) + min;
+
+    }
+
+    megamillionArray[i] = Math.round(ranNum);
+
+  }
+
+  return megamillionArray;
+
+}
+
+megamillionLotteryRandom = genRanMegamillionNum(1, 70, 5);
+
+megamillionRandom = genRanMegamillionNum(1, 25, 1);
+
+
+alert("Your MegaMillion lottery numbers are " + megamillionLotteryRandom + ", and your Megaball number is " + megamillionRandom + ".");
+    
+</script>
+
+
+</head>
+<body>
+
+</body>
+</html>
